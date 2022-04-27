@@ -15,10 +15,16 @@ app.get('/launchx', (req, res) => {
       res.send('Bienvenidos a launchx 🚀')
 })
 
-//* Regresando un objerto localhost:3000/explorer node
+//* Regresando un objerto localhost:3000/explorersInNode
 app.get('/explorersInNode', (req, res) => {
       const explorer = {name: 'Cristian Flores', username: 'elchicogamer', msg: 'Hello'}
       res.send(explorer)
+})
+
+//* Query Params: Recibir parametros por la url localhost:3000/cristian
+// req.params = {'explorerName':'cristian'}
+app.get('/explorers/:explorerName', (req, res) => { 
+      res.send(req.params)
 })
 
 //* Inicializamos la app
